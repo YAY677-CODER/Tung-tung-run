@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tubg Tung Run - Endless 3D Runner</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- GLTFLoader for .glb models -->
+    <script src="https://cdn.jsdelivr.net/npm/three@r128/examples/js/loaders/GLTFLoader.js"></script>
+</head>
+<body>
+    <!-- 3D Canvas Container -->
+    <div id="gameContainer"></div>
+
+    <!-- UI Overlay -->
+    <div id="ui" class="ui-container">
+        <!-- Top HUD -->
+        <div id="hud" class="hud">
+            <div class="hud-left">
+                <div class="hud-item">
+                    <span class="hud-label">Score</span>
+                    <span id="score" class="hud-value">0</span>
+                </div>
+                <div class="hud-item">
+                    <span class="hud-label">Coins</span>
+                    <span id="coins" class="hud-value">0</span>
+                </div>
+            </div>
+            <div class="hud-right">
+                <div id="multiplierBadge" class="multiplier-badge" style="display: none;">
+                    2x
+                </div>
+                <div id="powerUpDisplay" class="power-up-display"></div>
+            </div>
+        </div>
+
+        <!-- Start Screen -->
+        <div id="startScreen" class="screen start-screen">
+            <div class="screen-content">
+                <h1 class="game-title">TUBG TUNG RUN</h1>
+                <p class="subtitle">Escape the Endless Tracks</p>
+                <button id="startBtn" class="btn btn-large">START GAME</button>
+                <div class="controls-info">
+                    <p><strong>PC:</strong> ← → Arrows to move | Space/W to Jump | Shift to Roll</p>
+                    <p><strong>Mobile:</strong> Swipe Left/Right | Swipe Up to Jump | Swipe Down to Roll</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div id="gameOverScreen" class="screen game-over-screen" style="display: none;">
+            <div class="screen-content">
+                <h1 class="game-over-title">GAME OVER</h1>
+                <div class="stats">
+                    <p>Final Score: <span id="finalScore">0</span></p>
+                    <p>Coins Collected: <span id="finalCoins">0</span></p>
+                    <p>Distance: <span id="finalDistance">0</span>m</p>
+                </div>
+                <button id="restartBtn" class="btn btn-large">PLAY AGAIN</button>
+            </div>
+        </div>
+
+        <!-- Power-Up Notifications -->
+        <div id="powerUpNotification" class="power-up-notification"></div>
+
+        <!-- Lane Indicators -->
+        <div id="laneIndicators" class="lane-indicators">
+            <div id="lane0" class="lane-indicator"></div>
+            <div id="lane1" class="lane-indicator active"></div>
+            <div id="lane2" class="lane-indicator"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="main.js"></script>
+</body>
+</html>
